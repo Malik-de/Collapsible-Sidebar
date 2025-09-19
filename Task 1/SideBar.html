@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">LOGO</div>
+    <ul class="nav-links">
+      <li><a href="#"><span>🏠</span> Home</a></li>
+      <li><a href="#"><span>📄</span> About</a></li>
+      <li><a href="#"><span>📞</span> Contact</a></li>
+      <li><a href="#"><span>⚙️</span> Settings</a></li>
+      <li><a href="#"><span>❓</span> Help</a></li>
+    </ul>
+  </div>
+
+  <!-- Toggle Button -->
+  <button class="toggle-btn" id="toggleBtn">☰</button>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Responsive Sidebar</h1>
+    <p>Click the menu button to toggle the sidebar.</p>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const sidebar = document.getElementById("sidebar");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("closed");
+    });
+  </script>
+</body>
+</html>

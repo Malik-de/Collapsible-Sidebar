@@ -1,0 +1,111 @@
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background: #1e293b;
+      color: #fff;
+      transition: transform 0.3s ease;
+      transform: translateX(0);
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .sidebar.closed {
+      transform: translateX(-100%);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      flex-grow: 1;
+    }
+
+    .nav-links li {
+      margin: 1rem 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: #1e293b;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+
+    .toggle-btn:hover {
+      background: #334155;
+    }
+
+    /* Main Content */
+    .content {
+      margin-left: 250px;
+      padding: 2rem;
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.closed ~ .content {
+      margin-left: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .toggle-btn {
+        padding: 8px 12px;
+      }
+    }
+  </style>
